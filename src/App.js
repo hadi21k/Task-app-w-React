@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import "./App.css";
+import { useState } from "react";
+import TodoList from "./components/TodoList";
+const App = () => {
+  const [tasks, setTasks] = useState([]);
+  console.log(tasks);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app h-screen bg-purple-700 p-16 w-full flex items-center">
+      <div className="main-container py-5 px-2 bg-black m-auto h-4/5 w-full md:max-w-screen-md rounded-3xl overflow-scroll ">
+        <TodoList />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
